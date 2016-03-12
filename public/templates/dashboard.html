@@ -1,0 +1,17 @@
+<header class="header">
+  <h1>Laundry Form</h1>
+</header>
+
+<h2 class="order">New Request</h2>
+
+<form>
+  <input type="text" ng-model=fullName placeholder="Full Name">
+  <br>
+  <input type="text" ng-model="mobileNumber" placeholder="Mobile Number">
+  <br>
+  <input type="textarea" ng-model="address" placeholder="Address">
+  <br>
+  <input type="text" ng-model="assignedTo" placeholder="Assigned To (Full Name)">
+  <br>
+  <button ng-click="addCard(title, priority, createdBy, assignedTo); title=''; priority=''; createdBy=''; assignedTo='';">Add Task</button>
+</form>
