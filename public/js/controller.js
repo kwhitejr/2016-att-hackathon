@@ -15,5 +15,17 @@ app
           }
         );
       };
+
+      $scope.submitOrder = function ($event) {
+        FireBaseService.createOrder(
+          {
+            street: '456 Sean Road',
+            city: 'ChazTown',
+            state: 'Tonyville',
+            zip: 12345,
+            date: new Date()
+          }
+        );
+      };
     }
   ]);

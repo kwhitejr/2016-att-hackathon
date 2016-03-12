@@ -17,6 +17,9 @@ function FireBaseService () {
     ref.push(userData);
   };
 
-
+  this.createOrder = function (orderData) {
+    var userRef = new Firebase("https://dazzling-inferno-8770.firebaseio.com/-KCgarAE_a4T_0oHVzW0/history");
+    userRef.push(orderData);
+  };
 
 }

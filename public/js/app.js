@@ -12,6 +12,10 @@ app
         controller: 'MyController',
         templateUrl: '/public/templates/registration.html'
       })
+      .when('/request', {
+        controller: 'MyController',
+        templateUrl: '/public/templates/request-form.html'
+      })
       .when('/404', {
         templateUrl: '/public/templates/404.html'
       })
