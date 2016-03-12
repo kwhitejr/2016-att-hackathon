@@ -8,6 +8,9 @@ app
       .when('/', {
         templateUrl: '/public/templates/dashboard.html'
       })
+      .when('/registration', {
+        templateUrl: '/public/templates/registration.html'
+      })
       .when('/404', {
         templateUrl: '/public/templates/404.html'
       })
