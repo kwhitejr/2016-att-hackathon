@@ -2,7 +2,7 @@ app.service('FireBaseService', FireBaseService);
 
 function FireBaseService () {
 
-  var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+  var ref = new Firebase("https://dazzling-inferno-8770.firebaseio.com");
 
   // // download the data into a local object
   // var syncObject = $firebaseObject(ref);
@@ -12,8 +12,9 @@ function FireBaseService () {
   // syncObject.$bindTo($scope, "data");
 
   this.addUser = function (userData) {
+    console.log('hello');
     console.log(userData);
-    ref.set(userData);
+    ref.push(userData);
   };
 
 

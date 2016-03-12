@@ -9,6 +9,7 @@ app
         templateUrl: '/public/templates/dashboard.html'
       })
       .when('/registration', {
+        controller: 'MyController',
         templateUrl: '/public/templates/registration.html'
       })
       .when('/404', {

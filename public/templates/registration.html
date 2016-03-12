@@ -1,9 +1,9 @@
-<form>
-  <input type="text" ng-model=firstName placeholder="First Name">
+<form ng-submit="submitUser($event)" >
+  <input type="text" name=firstName placeholder="First Name">
   <br>
-  <input type="text" ng-model="lastName" placeholder="Last Name">
+  <input type="text" name="lastName" placeholder="Last Name">
   <br>
-  <input type="password" ng-model="password" placeholder="Password">
+  <input type="password" name="password" placeholder="Password">
   <br>
-  <button ng-click="FirebaseService.addUser({firstName: firstName, lastName: lastName, password: password}); firstNme=''; lastName=''; password='';">Add User</button>
+  <button type="submit">Add User</button>
 </form>
