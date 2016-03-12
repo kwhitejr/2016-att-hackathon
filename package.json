@@ -1,0 +1,20 @@
+{
+  "name": "2016-att-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwhitejr/2016-att-hackathon.git"
+  },
+  "author": "chaz n kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwhitejr/2016-att-hackathon/issues"
+  },
+  "homepage": "https://github.com/kwhitejr/2016-att-hackathon#readme"
+}
