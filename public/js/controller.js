@@ -4,7 +4,33 @@ app
   .controller('MyController', [
     '$scope',
     'FireBaseService',
-    function ($scope, FireBaseService) {
+    '$firebaseObject',
+    function ($scope, FireBaseService, $firebaseObject) {
+
+      var userId = [];
+
+      var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
+
+      var obj = $firebaseObject(ref);
+
+      // to take an action after the data loads, use the $loaded() promise
+      obj.$loaded()
+        .then(function() {
+          console.log("loaded record: ", obj.$id);
+
+          // To iterate the key/value pairs of the object, use angular.forEach()
+          angular.forEach(obj, function(value, key) {
+            console.log(key, value);
+            userId.push(key);
+          });
+        });
+
+      // To make the data available in the DOM, assign it to $scope
+      $scope.data = obj;
+
+      // For three-way data bindings, bind it to the scope instead
+      obj.$bindTo($scope, "data");
+
       $scope.FireBaseService = FireBaseService;
       $scope.submitUser = function ($event) {
         FireBaseService.addUser(
@@ -19,12 +45,14 @@ app
       $scope.submitOrder = function ($event) {
         FireBaseService.createOrder(
           {
-            street: '456 Sean Road',
-            city: 'ChazTown',
-            state: 'Tonyville',
-            zip: 12345,
+            street: $event.target.street.value,
+            city: $event.target.city.value,
+            state: $event.target.state.value,
+            zip: $event.target.zipCode.value,
+            laundry: $event.target.laundryWeight.value,
             date: new Date()
-          }
+          },
+          userId[1]
         );
       };
     }
