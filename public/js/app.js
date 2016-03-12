@@ -6,13 +6,13 @@ app
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/public/templates/dashboard.html'
+        templateUrl: '/public/templates/registration.html'
       })
       .when('/registration', {
         controller: 'MyController',
         templateUrl: '/public/templates/registration.html'
       })
-      .when('/request', {
+      .when('/:id/request', {
         controller: 'MyController',
         templateUrl: '/public/templates/request-form.html'
       })
