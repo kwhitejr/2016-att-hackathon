@@ -18,7 +18,7 @@ app
         templateUrl: '/public/templates/request-form.html'
       })
       .when('/received', {
-        controller: 'MyController',
+        controller: 'receivedController',
         templateUrl: '/public/templates/request-received-2.html'
       })
       .when('/404', {

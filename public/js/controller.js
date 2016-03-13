@@ -9,8 +9,6 @@ app
     '$rootScope',
     function ($scope, FireBaseService, $firebaseObject, $firebaseArray, $rootScope) {
 
-      $rootScope.mapFactory.initMap();
-
       var userId = [];
 
       var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
@@ -62,6 +60,30 @@ app
           $rootScope.userId
         );
       };
+
+    }
+  ])
+
+  .controller('receivedController', [
+    '$scope',
+    '$rootScope',
+    '$firebaseArray',
+    function ($scope, $rootScope, $firebaseArray) {
+      $rootScope.mapFactory.initMap();
+
+      var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
+
+      var list = $firebaseArray(ref);
+
+      $scope.userRecord;
+      $scope.agentRecord;
+
+      list.$loaded()
+        .then(function (arr) {
+          $scope.userRecord = arr.$getRecord($rootScope.userId);
+          $scope.agentRecord = arr.$getRecord($rootScope.agentId);
+          console.log($scope.userRecord.history);
+        });
 
     }
   ]);
