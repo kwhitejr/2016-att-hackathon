@@ -4,6 +4,7 @@ var app = angular.module('app');
 
 app
   .config(function ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: '/public/templates/dashboard.html'
@@ -18,7 +19,7 @@ app
       })
       .when('/received', {
         controller: 'MyController',
-        templateUrl: '/public/templates/request-received.html'
+        templateUrl: '/public/templates/request-received-2.html'
       })
       .when('/404', {
         templateUrl: '/public/templates/404.html'
@@ -28,11 +29,13 @@ app
   })
   .run([
     '$rootScope',
+    'mapFactory',
     // 'APP_VERSION',
-    function ($rootScope) {
+    function ($rootScope, mapFactory) {
       // Start Application
       // $rootScope.version = APP_VERSION;
       $rootScope.userId = "-KChM7Gt8GR2p7mJwOiH";
       $rootScope.agentId = "-KChMMjFv1vsqp-2IB0q";
+      $rootScope.mapFactory = mapFactory;
     }
   ]);

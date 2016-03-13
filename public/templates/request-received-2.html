@@ -1,11 +1,7 @@
-<header class="header">
-  <h1>New Orders Received</h1>
-</header>
-
 <div class="newOrders">
+  <div id="map"></div>
   <ol>
     <li class="singleOrder" ng-repeat="order in userRecord.history">
-      <div id="map"></div>
       <p class="name">{{order.firstName}} {{order.lastName}}</p>
       <p class="phone">{{order.phone}}</p>
       <p class="email">{{order.email}}</p>

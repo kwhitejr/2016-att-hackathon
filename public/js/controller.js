@@ -9,6 +9,8 @@ app
     '$rootScope',
     function ($scope, FireBaseService, $firebaseObject, $firebaseArray, $rootScope) {
 
+      $rootScope.mapFactory.initMap();
+
       var userId = [];
 
       var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
@@ -24,18 +26,7 @@ app
         .then(function (arr) {
           $scope.userRecord = arr.$getRecord($rootScope.userId);
           $scope.agentRecord = arr.$getRecord($rootScope.agentId);
-        });
-
-      // to take an action after the data loads, use the $loaded() promise
-      obj.$loaded()
-        .then(function() {
-          console.log("loaded record: ", obj.$id);
-
-          // To iterate the key/value pairs of the object, use angular.forEach()
-          angular.forEach(obj, function(value, key) {
-            console.log(key, value);
-            userId.push(key);
-          });
+          console.log($scope.userRecord.history);
         });
 
       // To make the data available in the DOM, assign it to $scope
@@ -71,5 +62,6 @@ app
           $rootScope.userId
         );
       };
+
     }
   ]);
