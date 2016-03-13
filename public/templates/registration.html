@@ -1,21 +1,23 @@
-<h1>Registration</h1>
+<div id="registration" class="form">
+  <h1 class="title">Registration</h1>
 
-<form ng-submit="submitUser($event)" >
-  <input type="text" name=firstName placeholder="First Name">
-  <br>
-  <input type="text" name="lastName" placeholder="Last Name">
-  <br>
-  <input type="password" name="password" placeholder="Password">
-  <br>
-  <input type="text" name="phone" placeholder="Phone Number">
-  <br>
-  <input type="text" name="email" placeholder="E-Mail">
-  <br>
-  <select type="text" name="role">
-    <option value="Customer">Customer</option>
-    <option value="Agent">Agent</option>
-  <br>
-  </select>
-  <br>  
-  <button type="submit">Add User</button>
-</form>
+  <form ng-submit="submitUser($event)" >
+    <input type="text" name=firstName placeholder="First Name">
+    <br>
+    <input type="text" name="lastName" placeholder="Last Name">
+    <br>
+    <input type="password" name="password" placeholder="Password">
+    <br>
+    <input type="text" name="phone" placeholder="Phone Number">
+    <br>
+    <input type="text" name="email" placeholder="E-Mail">
+    <br>
+    <select type="text" name="role">
+      <option value="Customer">Customer</option>
+      <option value="Agent">Agent</option>
+    <br>
+    </select>
+    <br>  
+    <button class="button" type="submit">Add User</button>
+  </form>
+</div>
