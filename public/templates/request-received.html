@@ -1,18 +1,24 @@
-<header class="header">
-  <h1>New Orders Received</h1>
-</header>
+<div class="form">
+  <header class="header">
+    <h1 class="title">New Orders Received</h1>
+  </header>
 
-<div class="newOrders">
-  <ol>
-    <li class="singleOrder" ng-repeat="order in orders">
-      <p class="name">{{order.firstName}} {{order.lastName}}</p>
-      <p class="phone">{{order.phone}}</p>
-      <p class="email">{{order.email}}</p>
-      <p class="address">{{order.street}}</p>
-      <p class="address">{{order.city}}, {{order.state}}</p>
-      <p class="zip">{{order.zip}}</p>
-      <p class="laundry">{{order.laundry}}</p>
-      <p class="date">{{order.date}}</p>
-    </li>
-  </ol>
+<div id="map"></div>
+
+  <div class="newOrders">
+    <ol>
+      <li class="singleOrder" ng-repeat="order in userRecord.history">
+        <p class="name">{{userRecord.firstName}} {{userRecord.lastName}}</p>
+        <p class="phone">{{userRecord.phone}}</p>
+        <p class="email">{{userRecord.email}}</p>
+        <p class="address">{{order.street}}</p>
+        <p class="address">{{order.city}}, {{order.state}}</p>
+        <p class="zip">{{order.zip}}</p>
+        <p class="laundry">{{order.laundry}}</p>
+        <p class="date">{{order.date}}</p>
+        <button>Accept</button>
+        <button>Decline</button>
+      </li>
+    </ol>
+  </div>
 </div>

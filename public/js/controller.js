@@ -9,6 +9,8 @@ app
     '$rootScope',
     function ($scope, FireBaseService, $firebaseObject, $firebaseArray, $rootScope) {
 
+      $scope.orders = [];
+
       var userId = [];
 
       var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
@@ -24,6 +26,7 @@ app
         .then(function (arr) {
           $scope.userRecord = arr.$getRecord($rootScope.userId);
           $scope.agentRecord = arr.$getRecord($rootScope.agentId);
+          console.log($scope.userRecord);
         });
 
       // to take an action after the data loads, use the $loaded() promise
@@ -72,4 +75,26 @@ app
         );
       };
     }
+  ])
+  .controller('receivedController', [
+    '$scope',
+    '$rootScope',
+    '$firebaseArray',
+    function ($scope, $rootScope, $firebaseArray) {
+      $rootScope.mapFactory.initMap();
+
+      var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
+
+      var list = $firebaseArray(ref);
+
+      $scope.userRecord;
+      $scope.agentRecord;
+
+      list.$loaded()
+        .then(function (arr) {
+          $scope.userRecord = arr.$getRecord($rootScope.userId);
+          $scope.agentRecord = arr.$getRecord($rootScope.agentId);
+          console.log($scope.userRecord.history);
+        });
+      }
   ]);

@@ -6,7 +6,8 @@ app
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/public/templates/dashboard.html'
+        controller: 'MyController',
+        templateUrl: '/public/templates/registration.html'
       })
       .when('/registration', {
         controller: 'MyController',
@@ -17,7 +18,7 @@ app
         templateUrl: '/public/templates/request-form.html'
       })
       .when('/received', {
-        controller: 'MyController',
+        controller: 'receivedController',
         templateUrl: '/public/templates/request-received.html'
       })
       .when('/404', {
@@ -28,11 +29,13 @@ app
   })
   .run([
     '$rootScope',
+    'mapFactory',
     // 'APP_VERSION',
-    function ($rootScope) {
+    function ($rootScope, mapFactory) {
       // Start Application
       // $rootScope.version = APP_VERSION;
       $rootScope.userId = "-KChM7Gt8GR2p7mJwOiH";
       $rootScope.agentId = "-KChMMjFv1vsqp-2IB0q";
+      $rootScope.mapFactory = mapFactory;
     }
   ]);

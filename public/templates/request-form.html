@@ -1,19 +1,21 @@
-<header class="header">
-  <h1>Laundry Form</h1>
-</header>
+<div class="form">
+  <header class="header">
+    <h1 class="title">Laundry Form</h1>
+  </header>
 
-<h2 class="order">New Request</h2>
+  <h2 class="title">New Request</h2>
 
-<form ng-submit="submitOrder($event)" >
-  <input type="text" name="street" placeholder="Street">
-  <br>
-  <input type="text" name="city" placeholder="City">
-  <br>
-  <input type="text" name="state" placeholder="State">
-  <br>
-  <input type="text" name="zipCode" placeholder="Zip Code">
-  <br>
-  <input type="text" name="laundryWeight" placeholder="Laundry Weight (Per LB)">
-  <br>
-  <button type="submit">Submit Order</button>
-</form>
+  <form ng-submit="submitOrder($event)" >
+    <input type="text" name="street" placeholder="Street">
+    <br>
+    <input type="text" name="city" placeholder="City">
+    <br>
+    <input type="text" name="state" placeholder="State">
+    <br>
+    <input type="text" name="zipCode" placeholder="Zip Code">
+    <br>
+    <input type="text" name="laundryWeight" placeholder="Laundry Weight (Per LB)">
+    <br>
+    <button type="submit">Submit Order</button>
+  </form>
+</div>

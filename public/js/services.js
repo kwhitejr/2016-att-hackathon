@@ -21,5 +21,4 @@ function FireBaseService () {
     var userRef = new Firebase("https://dazzling-inferno-8770.firebaseio.com/" + userId + "/history");
     userRef.push(orderData);
   };
-
 }
