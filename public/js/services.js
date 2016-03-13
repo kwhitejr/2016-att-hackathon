@@ -18,9 +18,13 @@ function FireBaseService () {
   };
 
   this.createOrder = function (orderData, userId) {
+<<<<<<< HEAD
 
 
     var userRef = new Firebase("https://dazzling-inferno-8770.firebaseio.com/"+userId+"/history");
+=======
+    var userRef = new Firebase("https://dazzling-inferno-8770.firebaseio.com/" + userId + "/history");
+>>>>>>> ba6307ee75bb738f69e42db854e5b0a338653911
     userRef.push(orderData);
   };
 
