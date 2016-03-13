@@ -5,13 +5,26 @@ app
     '$scope',
     'FireBaseService',
     '$firebaseObject',
-    function ($scope, FireBaseService, $firebaseObject) {
+    '$firebaseArray',
+    '$rootScope',
+    function ($scope, FireBaseService, $firebaseObject, $firebaseArray, $rootScope) {
 
       var userId = [];
 
       var ref = new Firebase('https://dazzling-inferno-8770.firebaseio.com');
 
       var obj = $firebaseObject(ref);
+
+      var list = $firebaseArray(ref);
+
+      $scope.userRecord;
+      $scope.agentRecord;
+
+      list.$loaded()
+        .then(function (arr) {
+          $scope.userRecord = arr.$getRecord($rootScope.userId);
+          $scope.agentRecord = arr.$getRecord($rootScope.agentId);
+        });
 
       // to take an action after the data loads, use the $loaded() promise
       obj.$loaded()
@@ -37,7 +50,10 @@ app
           {
             firstName: $event.target.firstName.value,
             lastName: $event.target.lastName.value,
-            password: $event.target.password.value
+            password: $event.target.password.value,
+            phone: $event.target.phone.value,
+            email: $event.target.email.value,
+            role: $event.target.role.value
           }
         );
       };
@@ -52,7 +68,7 @@ app
             laundry: $event.target.laundryWeight.value,
             date: new Date()
           },
-          userId[1]
+          $rootScope.userId
         );
       };
     }
